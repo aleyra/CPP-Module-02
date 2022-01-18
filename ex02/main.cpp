@@ -1,23 +1,92 @@
 #include <iostream>
 #include "Fixed.hpp"
 
+void	tests_perso(){
+	bool		test;
+	Fixed	a(10);
+	Fixed	b(15);
+	Fixed	c(a);
+	Fixed	res;
+
+
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "c = " << c << std::endl << std::endl;
+	
+	test = (0 < 1);
+	std::cout << "for reference, 0 < 1 returns " << test << std::endl << std::endl;
+	
+	test = (a < b);
+	std::cout << "a < b returns " << test << " and b < a returns ";
+	test = (b < a);
+	std::cout << test << std::endl << std::endl;
+	
+	test = (a <= b);
+	std::cout << "a <= b returns " << test << " and b <= a returns ";
+	test = (b <= a);
+	std::cout << test << std::endl;
+	test = (a <= c);
+	std::cout << "a <= c returns " << test << " and c <= a returns ";
+	test = (c <= a);
+	std::cout << test << std::endl << std::endl;
+	
+	test = (a >= b);
+	std::cout << "a >= b returns " << test << " and b >= a returns ";
+	test = (b >= a);
+	std::cout << test << std::endl;
+	test = (a >= c);
+	std::cout << "a >= c returns " << test << " and c >= a returns ";
+	test = (c >= a);
+	std::cout << test << std::endl << std::endl;
+
+	test = (0 == 1);
+	std::cout << "for reference, 0 == 1 returns " << test << std::endl << std::endl;
+	
+	test = (a == b);
+	std::cout << "a == b returns " << test << " and c == a returns ";
+	test = (c >= a);
+	std::cout << test << std::endl << std::endl;
+
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl << std::endl;
+	res = a + b;
+	std::cout << "a + b = " << res << std::endl;
+	res = a - b;
+	std::cout << "a - b = " << res << std::endl;
+	res = a * b;
+	std::cout << "a * b = " << res << std::endl;
+	res = b / a;
+	std::cout << "b / a = " << res << std::endl << std::endl;
+
+	std::cout << "b = " << b << "\t\tb++ returns " << b++ << "\t\tb = " << b << std::endl;
+	std::cout << "b = " << b << "\t++b returns " << ++b << "\tb = " << b <<std::endl;
+	std::cout << "b = " << b << "\tb-- returns " << b-- << "\tb = " << b <<std::endl;
+	std::cout << "b = " << b << "\t--b returns " << --b << "\t\tb = " << b <<std::endl << std::endl;
+
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl << std::endl;
+
+	res = Fixed::max(a, b);
+	std::cout << "max(a, b) = " << res << std::endl;
+	res = Fixed::min(a, b);
+	std::cout << "min(a, b) = " << res << std::endl;
+}
+
 int	main(void) {
 	Fixed		a;
-	Fixed const	b(10);
-	Fixed const	c(42.42f);
-	Fixed const	d(b);
+	Fixed const	b(Fixed(5.05f) * Fixed(2));
 
-	a = Fixed(1234.4321f);
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-
-	std::cout << "a is " << a.toInt() << " as insteger" << std::endl;
-	std::cout << "b is " << b.toInt() << " as insteger" << std::endl;
-	std::cout << "c is " << c.toInt() << " as insteger" << std::endl;
-	std::cout << "d is " << d.toInt() << " as insteger" << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max(a,b) << std::endl;
 	
+	std::cout << "\ttests perso" << std::endl;
+	std::cout << "\t-----------" << std::endl;
+	tests_perso();
 	return 0;
 }

@@ -37,10 +37,10 @@ public:
 	Fixed	operator--( void );
 	Fixed	operator--(int );
 
-	static Fixed	&min(Fixed &fx1, Fixed &fx2);
-	static Fixed	&min(Fixed const fx1, Fixed const &fx2);
-	static Fixed	&max(Fixed &fx1, Fixed &fx2);
-	static Fixed	&max(Fixed const fx1, Fixed const fx2);
+	static Fixed		&min(Fixed &fx1, Fixed &fx2);
+	static Fixed const	&min(Fixed const &fx1, Fixed const &fx2);
+	static Fixed		&max(Fixed &fx1, Fixed &fx2);
+	static Fixed const	&max(Fixed const &fx1, Fixed const &fx2);
 
 private:
 
