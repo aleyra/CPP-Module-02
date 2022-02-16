@@ -3,8 +3,8 @@
 
 void	tests_perso(){
 	bool		test;
-	Fixed	a(10);
-	Fixed	b(15);
+	Fixed	a(1.2f);
+	Fixed	b(1.5f);
 	Fixed	c(a);
 	Fixed	res;
 
@@ -73,7 +73,7 @@ void	tests_perso(){
 }
 
 int	main(void) {
-	Fixed		a;
+	Fixed		a(0);
 	Fixed const	b(Fixed(5.05f) * Fixed(2));
 
 	std::cout << a << std::endl;
